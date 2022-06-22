@@ -1,0 +1,105 @@
+.OrderForm
+	background-color: #1a2d3e
+	&-Wrapper
+		display: grid
+		grid-template-columns: repeat(2, 1fr)
+		column-gap: 100px
+	&-Content
+		padding-top: 80px
+		padding-bottom: 80px
+		width: 476px
+		background: #1a2d3e
+	&-Text
+		color: #b5bfc9
+		font-size:  clamp(1.3rem, 0.8333vw, 1.7rem)
+		margin-top: 30px
+.Form
+	display: flex
+	flex-direction: column
+	&-Content
+	&-Name
+	&-ContentRow
+		margin-top: 25px
+		position: relative
+		&:last-child
+			margin-bottom: 40px
+		&:nth-of-type(1):after
+			content: ""
+			width: 18px
+			height: 20px
+			background: red
+			position: absolute
+			top: 50%
+			transform: translateY(-50%)
+			right: 0
+			z-index: 2
+			background: no-repeat svg-load("../images/user.svg",  color="#9ba5af", width="18px", height="20px") center
+		&:nth-of-type(2):after
+			content: ""
+			width: 20px
+			height: 20px
+			background: red
+			position: absolute
+			top: 50%
+			transform: translateY(-50%)
+			right: 0
+			z-index: 2
+			background: no-repeat svg-load("../images/phone-form.svg",  color="#9ba5af", width="20px", height="20px") center
+		&:nth-of-type(3):after
+			content: ""
+			width: 22px
+			height: 16px
+			background: red
+			position: absolute
+			top: 50%
+			transform: translateY(-50%)
+			right: 0
+			z-index: 2
+			background: no-repeat svg-load("../images/envelope.svg", color="#9ba5af", width="22px", height="16px") center
+	&-Input
+		width: 100%
+		border-bottom: 2px solid #939089
+		padding-bottom: 15px
+		color: #9ba5af
+		&::placeholder
+			color: #9ba5af
+			font-size: clamp(1.2rem, 0.7291vw, 1.6rem)
+			opacity: 1
+	&-Agreement
+		font-size: clamp(1.4rem, 0.8333vw, 1.7rem)
+		color: #9ba5af
+		line-height: 1
+		margin-top: 20px
+		display: block
+.OrderFormImage
+	object-fit: cover
+	width: inherit
+	height: inherit
+	&-Wrapper
+		width: 683px
+		height: 683px
+.Input-Valid
+.Input-Invalid
+
+@media screen and ( max-width: 1900px )
+	.OrderForm
+		&-Content
+			grid-column: 1 / -1
+			grid-row: 1 / -1
+			z-index: 2
+			padding-right: 40px
+	.OrderFormImage
+		&-Wrapper
+			grid-row: 1 / -1
+			z-index: 1
+@media screen and ( max-width: 1500px )
+	.OrderForm
+		&-Content
+			justify-self: center
+	.OrderFormImage
+		&-Wrapper
+			display: none
+@media screen and ( max-width: 800px)
+	.OrderForm
+		&-Content
+			width: 100%

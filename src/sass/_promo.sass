@@ -1,0 +1,127 @@
+.Promo
+	padding-top: 90px
+	background-color: #122536
+	padding-bottom: 40px
+	&-Content
+		// display: grid
+		// grid-template-columns: repeat(8, 1fr)
+		display: flex
+		position: relative
+		z-index: 1
+	&-ContentColumn
+		grid-column: 1 / 4
+		align-self: center
+		margin-left: 90px
+		margin-right: 120px
+		z-index: 3
+	&-Header
+		font-family: "OpenSans-ExtraBold"
+		font-style: normal
+		font-weight: 800
+		// font-size: clamp(3.8rem, 3.3854vw, 8rem )
+		font-size: clamp(3.8rem, 2.8125vw, 8rem)
+		color: #fffffb
+		line-height: 1
+	&-Text
+		font-family: "OpenSans-Medium"
+		font-style: normal
+		font-weight: 500
+		// font-size: clamp(1.1rem, 0.8541vw, 2rem )
+		font-size: clamp(1.1rem, 0.7291vw, 2rem)
+		color: #f7ffff
+		margin-top: 25px
+		margin-bottom: 35px
+	&-BackgroundImage
+		position: absolute
+		top: 0
+		left: 0
+		z-index: 1
+		width: min(62vw, 100%)
+		height: min(39vw, 103%)
+		padding-left: 15px
+		padding-right: 15px
+.PromoSlider
+	// grid-column: 5 / -1
+	// justify-self: end
+	justify-self: flex-end
+	align-self: flex-end
+	z-index: 2
+	&-Wrapper
+	&-Slide
+	&-Image
+		object-fit: cover
+		// width: clamp(285px, 30.4687vw, 585px )
+		width: 100%
+		height: clamp(297px, 31.0937vw, 597px )
+		vertical-align: middle
+.PromoSliderControls
+	display: flex
+	gap: 10px
+	margin-top: 45px
+	justify-content: flex-end
+	&-Bullet
+		width: 25px
+		height: 4px
+		background-color: #16303f
+		border-radius: 6px
+		cursor: pointer
+		transition: all 350ms linear
+	&-BulletActive
+		background-color: #1f444d
+		transition: all 350ms linear
+.DecorativeBackgroundImage
+	width: inherit
+	height: inherit
+	opacity: 0.04
+	object-fit: cover
+	vertical-align: middle
+
+@media screen and ( max-width: 1500px)
+	.Promo
+		&-ContentColumn
+			margin-right: 60px
+@media screen and ( max-width: 1300px)
+	.Promo
+		&-ContentColumn
+			margin-right: 20px
+@media screen and ( max-width: 1200px)
+	.Promo
+		&-ContentColumn
+			margin-right: -40px
+@media screen and ( max-width: 1090px )
+	.Promo-ContentColumn
+		grid-column: 1 / -1
+		grid-row: 1 / - 1
+		z-index: 3
+		margin-left: 9%
+	.PromoSlider
+		grid-column: 1 / -1
+		grid-row: 1 / -1
+		z-index: 2
+	.PromoSliderControls
+		justify-content: center
+@media screen and ( max-width: 1000px)
+	.Promo
+		&-ContentColumn
+			margin-right: -80px
+@media screen and ( max-width: 800px)
+	.Promo
+		&-ContentColumn
+			margin-right: -200px
+		.Promo
+			&-Header
+				text-shadow: 1px 1px 2px #000
+			&-Text
+				text-shadow: 1px 1px 2px #000
+@media screen and ( max-width: 600px)
+	.Promo
+		&-ContentColumn
+			margin-right: -320px
+
+.Fade-In
+	animation: Fade-In 450ms linear both
+@keyframes Fade-In 
+	0% 
+		opacity: 0
+	100% 
+		opacity: 0.04

@@ -1,0 +1,104 @@
+.Reviews
+	padding-top: 130px
+	background-color: #fcfcf4
+	padding-bottom: 100px
+	position: relative
+	&-Content
+		position: relative
+.ReviewsSlider
+	position: relative
+	&-Wrapper
+		margin-top: 30px
+	&-Slide
+		display: flex
+		align-items: center
+		height: 405px !important
+.Review
+	display: flex
+	flex-direction: column
+	background-color: #ffffff
+	padding: 55px 68px 55px 68px
+	height: 405px
+	width: 100%
+	margin-top: 90px
+	box-sizing: border-box
+	&-Text
+		font-family: "OpenSans-Light"
+		font-style: normal
+		font-weight: 300
+		max-width: 490px
+		margin-top: 20px
+		font-size: clamp(1.5rem, 0.9375vw, 2rem)
+	&-ReviewInfo
+		display: flex
+		flex-direction: column
+		order: -1
+	&-ReviewerCredentials
+		font-family: "OpenSans-SemiBold"
+		font-style: normal
+		font-weight: 600
+		font-size: clamp(1.8rem, 1.1458vw, 2.6rem)
+		margin-bottom: 5px
+	&-ChoosenServiceType
+		font-family: "OpenSans-SemiBold"
+		font-style: normal
+		font-weight: 600
+		font-size: clamp(1.3rem, 0.8854vw, 1.9rem)
+		color: #e4a971
+		letter-spacing: 0.8px
+	&-ReviewerPicture
+		width: inherit
+		height: inherit
+		object-fit: cover
+		opacity: 0 // TEST
+	&-ReviewerPictureWrapper
+		width: 318px
+		height: 284px
+		margin-left: -110px
+		margin-top: 40px
+.ReviewsSliderPagination
+	position: absolute
+	top: 525px
+	left: 50%
+	transform: translateX(-50%)
+	&-SwitchSlide
+		width: 25px
+		height: 4px
+		background-color: #cfd1d0
+		border-radius: 6px
+		cursor: pointer
+		transition: all 350ms linear
+	&-ActiveSlide
+		background-color: #1a3e4a
+		transition: all 350ms linear
+
+@media screen and ( max-width: 1400px)
+	.Review
+		&-ReviewerPictureWrapper
+			display: none
+@media screen and ( max-width: 610px)
+	.Review
+		height: 100%
+@media screen and ( min-width: 1960px)
+	.Review
+		&-Text
+			max-width: 690px
+@media screen and ( min-width: 2160px)
+	.Review
+		&-Text
+			max-width: 880px
+@media screen and ( max-width: 800px)
+	.Reviews
+		padding-top: 60px
+	.ReviewsSlider
+		padding-top: 60px
+
+.FlipInRight
+	animation: FlipInRight 350ms linear both
+@keyframes FlipInRight 
+	0% 
+		transform: perspective(500px) rotateY(-40deg)
+		opacity: 0
+	100% 
+		transform: perspective(500px) rotateY(0)
+		opacity: 1

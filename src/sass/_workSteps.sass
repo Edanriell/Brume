@@ -1,0 +1,75 @@
+=circle
+	content: attr(data-step)
+	width: 23px
+	height: 23px
+	border-radius: 50%
+	background: #ffe5d3
+	position: absolute
+	top: 2%
+	left: -65px
+	z-index: 2
+	line-height: 23px
+	text-align: center
+	font-family: "OpenSans-SemiBold"
+	font-style: normal
+	font-weight: 600
+	color: #1a242d
+	font-size: 1.3rem
+	box-shadow: 0 0 0 26px #fdf8f2
+	z-index: 1
+
+.WorkSteps
+	background-color: #fcfcf4
+	padding-bottom: 130px
+	&-Content
+.StepList
+	display: grid
+	grid-template-columns: repeat(3, 1fr)
+	grid-gap: 70px 136px
+	margin-left: 80px
+	padding-top: 80px
+.Step
+	position: relative
+	&:nth-child(1)::before
+		+circle
+	&:nth-child(2)::before
+		+circle
+	&:nth-child(3)::before
+		+circle
+	&:nth-child(4)::before
+		+circle
+	&:nth-child(5)::before
+		+circle
+	&:nth-child(6)::before
+		+circle
+	&-Name
+		font-family: "OpenSans-SemiBold"
+		font-style: normal
+		font-weight: 600
+		font-size: clamp(1.8rem, 1.0416vw, 2.8rem)
+		display: flex
+		flex-direction: column
+		&::after
+			content: ""
+			width: 43px
+			height: 1px
+			background-color: #1d2937
+			margin-top: 14px
+	&-Description
+		font-family: "OpenSans-Light"
+		font-style: normal
+		font-weight: 300
+		font-size: clamp(1.3rem, 0.7812vw, 1.8rem)
+		margin-top: 22px
+
+@media screen and ( max-width: 1500px)
+	.StepList
+		grid-template-columns: repeat(2, 1fr)
+@media screen and ( max-width: 900px)
+	.StepList
+		grid-template-columns: 1fr
+@media screen and ( max-width: 600px)
+	.WorkSteps
+		padding-bottom: 80px
+	.StepList
+		padding-top: 60px

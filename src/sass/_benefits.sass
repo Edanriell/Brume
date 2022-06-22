@@ -1,0 +1,64 @@
+.Benefits
+	background: #fcfcf4
+	padding-top: 130px
+	padding-bottom: 130px
+.BenefitsList
+	display: grid
+	grid-template-columns: repeat(4, 1fr)
+	column-gap: 2.6041%
+	grid-template-rows: repeat(2, 1fr)
+	grid-template-areas: "Benefit1 . Benefit3 ." ". Benefit2 . Benefit4"
+.Benefit
+	display: flex
+	flex-direction: column
+	&::before
+		content: attr(data-benefit-number)
+		font-family: "OpenSans-Bold"
+		font-style: normal
+		font-weight: 700
+		color: #fee5d1
+		font-size: clamp(4.8rem, 2.9166vw,6.8rem ) // 5 6
+		line-height: 1
+		margin-bottom: 20px
+	&:nth-of-type(2n)
+		margin-top: -50px
+	&-Name
+		font-size: clamp(1.8rem, 1.1458vw,2.8rem ) // 2 2
+		color: #1e1e20
+		font-family: "OpenSans-SemiBold"
+		font-style: normal
+		font-weight: 600
+		margin-bottom: 25px
+		line-height: 1.2
+	&-Description
+		font-size: clamp(1.1rem, 0.9270vw,1.98rem ) // 1 78
+		color: #807f7a
+		font-family: "OpenSans-Light"
+		font-style: normal
+		font-weight: 300
+.Benefit1
+	grid-area: Benefit1
+.Benefit2
+	grid-area: Benefit2
+.Benefit3
+	grid-area: Benefit3
+.Benefit4
+	grid-area: Benefit4
+
+@media screen and ( max-width: 1150px )
+	.BenefitsList
+		grid-template-areas: ". Benefit1 Benefit1 ." ". Benefit2 Benefit2 ." ". Benefit3 Benefit3 ." ". Benefit4 Benefit4 ."
+		row-gap: 2.6041%
+	.Benefit:nth-of-type(2n)
+		margin-top: 0
+@media screen and ( max-width: 700px )
+	.BenefitsList
+		grid-template-areas: "Benefit1 Benefit1 Benefit1 Benefit1" "Benefit2 Benefit2 Benefit2 Benefit2" "Benefit3 Benefit3 Benefit3 Benefit3" "Benefit4 Benefit4 Benefit4 Benefit4"
+		row-gap: 2.6041%
+	.Benefit:nth-of-type(2n)
+		margin-top: 0
+@media screen and ( max-width: 1130px)
+	.Benefits
+		background: #fcfcf4
+		padding-top: 60px
+		padding-bottom: 130px

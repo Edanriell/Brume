@@ -1,0 +1,120 @@
+=flex
+	display: flex
+	align-items: center
+
+.Header
+.MainNav
+	+flex
+	padding-top: 20px
+	padding-bottom: 30px
+	background: #122536
+	width: 100%
+	position: fixed // Fixed nav
+	z-index: 3 // Fixed nav
+	&-Content
+		+flex
+		transition: 0.3s ease all // Fixed nav
+	&-Sticky // Fixed nav
+		background: #122536 // Fixed nav
+		transition: 0.3s ease all // Fixed nav
+		.MainMenu
+			transition: 0.3s ease all // Fixed nav
+		.HamburgerMenu
+			transition: 0.3s ease all
+			padding-right: 30px // Fixed nav 
+			margin-left: 10px
+		.MainNav-Content
+			transition: 0.3s ease all
+			padding-left: 30px
+			padding-right: 30px
+.Logotype
+	width: inherit
+	height: inherit
+	&-Wrapper
+		width: min(70px, 14vw)
+		height: min(40px, 8vw)
+.MainMenu
+	+flex
+	margin-left: 50px
+	transition: 0.3s ease all // Fixed nav
+	&-Item
+		margin-right: 45px
+	&-Link
+		font-size: clamp(1rem, 1.0416vw, 2rem)
+		font-family: "OpenSans-Medium"
+		font-style: normal
+		font-weight: 500
+		text-transform: uppercase
+		color: #a4a9ad
+		transition: all 350ms ease-in-out
+		&:hover
+			color: #ac714f
+.Contacts
+	+flex
+	margin: 0 30px 0 auto
+	&::before
+		content: ""
+		width: 12px
+		height: 15px
+		background: no-repeat svg-load("../images/phone.svg", color=#e9f3fc, width=12px, height=15px) center
+		margin-right: 10px
+	&-PhoneNumber
+		color: #e9f3fc
+		font-size: clamp(0.8rem, 0.7812vw, 1.7rem)
+.HamburgerMenu
+	cursor: pointer // Fixed nav
+	display: none // Fixed nav
+	&-Item
+		width: min(8vw, 30px) // Fixed nav
+		height: min(2.2vw, 4px) // Fixed nav
+		background-color: #fff // Fixed nav
+		margin: 6px // Fixed nav
+		border-radius: 10px // Fixed nav
+		transition: 0.3s ease all // Fixed nav
+.Header .MainNav .MainNav-Active // Fixed nav
+	transform: translateX(0%) // Fixed nav
+	.MainMenu-Link
+		font-size: clamp(1.2rem, 6vw, 2.4rem)
+
+@media (max-width: 1440px)
+	.MainMenu-Item
+		margin-right: 25px
+@media (max-width: 1240px)
+	.MainMenu-Item
+		margin-right: 10px
+@media (max-width: 1040px)
+	.MainMenu
+		position: absolute
+		top: 0
+		left: 0
+		height: 100vh
+		width: 100vw
+		background: #122536e7
+		justify-content: center
+		margin: 0
+		padding: 0
+		flex-direction: column
+		transform: translateX(-100%)
+		z-index: 2
+	.HamburgerMenu
+		z-index: 3
+		display: block
+		position: absolute
+		right: 21%
+		top: 50%
+		transform: translateY(-50%)
+		&-Transform .FirstBar
+			transform: rotate(-45deg) translate(-9px, 6px)
+		&-Transform .SecondBar
+			opacity: 0
+		&-Transform .ThirdBar
+			transform: rotate(45deg) translate(-9px, -5px)
+	.MainMenu-Item
+		margin-right: 0
+		margin-bottom: 34px
+	.Contacts
+		display: none
+	.MainMenu-Link
+		color: #FFF
+	.Logotype-Wrapper
+		z-index: 3

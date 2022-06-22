@@ -1,0 +1,66 @@
+=Slider
+	margin-left: auto
+	margin-right: auto
+	position: relative
+	overflow: hidden
+	list-style: none
+	padding: 0
+	/* Fix of Webkit flickering */
+	z-index: 1
+=SliderWrapper
+	position: relative
+	width: 100%
+	height: 100%
+	z-index: 1
+	display: flex
+	transition-property: transform
+	box-sizing: content-box
+=SliderSlide
+	flex-shrink: 0
+	width: 100%
+	height: 100%
+	position: relative
+	transition-property: transform
+
+.PromoSlider
+	+Slider
+	&-Wrapper
+		+SliderWrapper
+	&-Slide
+		+SliderSlide
+.OffersSlider
+	+Slider
+	max-height: 31.770vw
+	&-Wrapper
+		+SliderWrapper
+	&-Slide
+		+SliderSlide
+.ReviewsSlider
+	+Slider
+	&-Wrapper
+		+SliderWrapper
+	&-Slide
+		+SliderSlide
+
+@media screen and ( max-width: 1200px)
+	.OffersSlider
+		max-height: 35vw
+	.Offers
+		padding-bottom: 80px
+@media screen and ( max-width: 1000px)
+	.OffersSlider
+		max-height: 40vw
+	.Offers
+		padding-bottom: 60px
+@media screen and ( max-width: 840px)
+	.OffersSlider
+		max-height: 50vw
+@media screen and ( max-width: 660px)
+	.OffersSlider
+		max-height: 60vw
+@media screen and ( max-width: 630px)
+	.OffersSlider
+		max-height: 70vw
+@media screen and ( max-width: 440px)
+	.OffersSlider
+		max-height: 85vw

@@ -1,0 +1,95 @@
+.NotificationList
+	display: grid
+	grid-template-rows: 1fr
+	row-gap: 25px
+	position: fixed
+	top: 50%
+	right: 0
+	transform: translateX(-50%)
+	z-index: 999999
+.Notification
+	position: relative
+	width: 520px
+	min-height: 100px
+	display: flex
+	align-items: center
+	padding: 14px
+	box-sizing: border-box
+	color: #000
+	border-radius: 100px
+	background-color: #ffffff
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset
+	&-Wrapper
+	&-Content
+		display: grid
+		grid-template-rows: 25px 1fr
+	&-IconWrapper
+		border-radius: 50%
+		width: 70px
+		height: 70px
+		display: flex
+		align-items: center
+		justify-content: center
+		margin-right: 20px
+		&_color_red
+			background: #fff2f3
+		&_color_green
+			background: #e7f9f0
+		&_color_blue
+			background: #f2f3ff
+	&-Icon
+		width: 40px
+		height: 40px
+	&-Text
+		font-size: 1.6rem
+		font-family: "OpenSans-SemiBold"
+		font-style: normal
+		font-weight: 600
+		&_color_red
+			color: #e30e0d
+		&_color_green
+			color: #14853f
+		&_color_blue
+			color: #3150ec
+	&-TypeText
+		color: #42526e
+		font-family: "OpenSans-Bold"
+		font-style: normal
+		font-weight: 700
+		font-size: 1.6rem
+	&-Close
+		width: 30px
+		height: 30px
+		background: no-repeat svg-load("../images/close.svg", color="#b5b5b5") center
+		transition: all 250ms linear
+		cursor: pointer
+		margin-left: auto
+		margin-right: 20px
+		&:hover
+			transform: rotate(-90deg) scale(1.1)
+			background: no-repeat url("../images/close.svg") center
+
+.SlideIn
+	animation: SlideIn 350ms linear both
+@keyframes SlideIn 
+	0% 
+		transform: translateX(50px)
+		opacity: 0
+	100% 
+		transform: translateX(0)
+		opacity: 1
+.SlideOut
+	animation: SlideOut 250ms linear both
+@keyframes SlideOut 
+	0% 
+		transform: translateX(0)
+		opacity: 1
+	100% 
+		transform: translateX(50px)
+		opacity: 0
+
+@media screen and ( max-width: 1480px)
+	.NotificationList
+		bottom: 0 !important
+		left: 50% !important
+		transform: translate(-50%, 50%) !important

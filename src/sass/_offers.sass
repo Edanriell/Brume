@@ -1,0 +1,132 @@
+.Offers
+	background-color: #fcfcf4
+	padding-bottom: 135px
+	&-Wrapper
+	&-Content
+		display: grid
+		grid-template-columns: 12.5vw 1fr
+		column-gap: 10px
+		// justify-content: space-between
+		padding-top: 65px
+.OffersList
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+.Offer
+	padding-top: 10px
+	padding-bottom: 10px
+	&:last-child
+		margin-bottom: 0
+	&:first-child
+		padding-top: 0
+	&-Switch
+		font-size: clamp(1rem, 0.8125vw, 4rem)
+		color: #a09f9a
+		font-family: "OpenSans-Light"
+		font-style: normal
+		font-weight: 300
+		text-align: left
+		cursor: pointer
+		line-height: 1
+		width: 181px
+		transition: all 350ms linear
+	&-SwitchActive
+		font-family: "OpenSans-SemiBold"
+		font-style: normal
+		font-weight: 600
+		color: #082743
+		font-size: clamp(1rem, 0.8125vw, 4rem)
+		margin-left: 30px
+		line-height: 1
+		width: 181px
+		transition: all 350ms linear
+.OffersSlider
+	&-Wrapper
+	&-Slide
+.OfferSlide
+	box-sizing: border-box
+	height: 31.770vw
+	width: 45.8333vw
+	display: grid
+	grid-template-columns: repeat(8, 1fr)
+	column-gap: 10px
+	row-gap: 20px
+	grid-template-areas: "Image Image Image Image Image Image Image Image" "Header Header Header Header Header . . TotalProjects" "Description Description Description Description Description . Button Button"
+	&-Header
+		grid-area: Header
+		color: #092437
+		font-size: clamp(1.2rem, 1.5625vw, 6rem)
+		align-self: center
+		font-family: "OpenSans-Regular"
+		font-style: normal
+		font-weight: 400
+	&-Image
+		object-fit: cover
+		grid-area: Image
+		vertical-align: middle
+		width: 45.7291vw
+		height: 20.3125vw
+	&-Description
+		grid-area: Description
+		font-size: clamp(1.1rem, 0.8854vw, 4rem)
+		color: #777671
+		font-family: "OpenSans-Light"
+		font-style: normal
+		font-weight: 300
+		max-width: 480px
+		align-self: end
+	&-TotalProjects
+		grid-area: TotalProjects
+		color: #172a38
+		font-size: clamp(0.8rem, 0.8854vw, 2rem)
+		align-self: center
+		justify-self: end
+	&-Button
+		grid-area: Button
+		align-self: end
+
+@media screen and ( min-width: 1930px)
+	.Offer
+		&-Switch
+			max-width: 340px
+		&-SwitchActive
+			max-width: 340px
+@media screen and ( min-width: 2100px)
+	.OfferSlide-Description
+		max-width: 800px !important
+@media screen and ( max-width: 1850px)
+	.Offers
+		&-Content
+			grid-template-rows: 100px 1fr
+	.OffersList
+		grid-row: 1 / 2
+		grid-column: 1 / -1
+		flex-direction: row
+		align-items: center
+	.OffersSlider
+		grid-row: 2 / - 1
+		grid-column: 1 / -1
+	.Offer
+		padding-top: 10px
+		padding-bottom: 10px
+		margin-right: 20px
+		&:first-child
+			padding-top: 10px
+		&:last-child
+			margin-right: 0
+		&-Switch
+			max-width: initial
+		&-SwitchActive
+			margin-left: 0
+			max-width: initial
+			margin-bottom: 30px
+
+@media screen and ( max-width: 670px)
+	.Offers
+		padding-bottom: 180px
+@media screen and ( max-width: 630px)
+	.OfferSlide
+		grid-template-areas: "Image Image Image Image Image Image Image Image" "Header Header Header Header Header Header . TotalProjects" "Description Description Description Description Description Description Description Description" ". . Button Button Button Button . ."
+@media screen and ( max-width: 500px)
+	.Offers
+		padding-bottom: 80px
